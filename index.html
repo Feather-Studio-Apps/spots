@@ -167,57 +167,45 @@
       color: var(--txt-muted);
     }
 
-    /* SCREENSHOT PLACEHOLDER */
+    /* SCREENSHOT SHOWCASE */
     .screenshot-area {
       width: 100%;
-      max-width: 320px;
+      max-width: 560px;
       margin: 64px auto 0;
-      position: relative;
+      padding: 0 20px;
     }
 
-    .phone-mockup {
-      width: 100%;
-      aspect-ratio: 9/19;
-      background: var(--bg-surface);
-      border-radius: 44px;
-      border: 2px solid var(--bg-card);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 12px;
-      color: var(--txt-muted);
-      font-size: 13px;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 32px 80px rgba(26, 24, 20, 0.12), 0 8px 24px rgba(26, 24, 20, 0.06);
-    }
-
-    .phone-mockup::before {
-      content: '';
-      position: absolute;
-      top: 16px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 6px;
-      background: var(--bg-card);
-      border-radius: 100px;
-    }
-
-    .phone-mockup-icon {
-      width: 48px;
-      height: 48px;
-      background: var(--bg-card);
-      border-radius: 12px;
+    .screenshot-stack {
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    /* To swap in a real screenshot, replace .phone-mockup with:
-       <img src="screenshot.png" alt="Spots. app screenshot" class="screenshot-img" />
-       and add: .screenshot-img { width: 100%; border-radius: 44px; box-shadow: ... } */
+    .screenshot-img {
+      width: 230px;
+      height: auto;
+      display: block;
+      border-radius: 38px;
+      box-shadow: 0 32px 80px rgba(26, 24, 20, 0.14), 0 8px 24px rgba(26, 24, 20, 0.08);
+    }
+
+    .screenshot-back {
+      transform: rotate(6deg) translateY(14px);
+      margin-right: -58px;
+      z-index: 1;
+      opacity: 0.96;
+    }
+
+    .screenshot-front {
+      transform: rotate(-4deg);
+      z-index: 2;
+      position: relative;
+    }
+
+    @media (max-width: 480px) {
+      .screenshot-img { width: 170px; border-radius: 28px; }
+      .screenshot-back { margin-right: -42px; transform: rotate(6deg) translateY(10px); }
+    }
 
     /* FEATURES */
     .features {
@@ -416,17 +404,11 @@
       <span class="hero-note">Free · iOS 16.6+</span>
     </div>
 
-    <!-- SCREENSHOT PLACEHOLDER -->
-    <!-- Replace .phone-mockup div with <img src="screenshot.png" ...> when ready -->
+    <!-- SCREENSHOT SHOWCASE -->
     <div class="screenshot-area">
-      <div class="phone-mockup">
-        <div class="phone-mockup-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9A9188" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-            <circle cx="12" cy="10" r="3"/>
-          </svg>
-        </div>
-        <span>Screenshot coming soon</span>
+      <div class="screenshot-stack">
+        <img src="screenshot-map.png" alt="Spots. map view showing saved places pinned across the city" class="screenshot-img screenshot-back" />
+        <img src="screenshot-list.png" alt="Spots. list view showing saved restaurants and cafés with status and ratings" class="screenshot-img screenshot-front" />
       </div>
     </div>
   </section>
@@ -481,7 +463,7 @@
   <section class="private-section">
     <p class="section-label">Private by design</p>
     <h2 class="section-title">Your data belongs to you.</h2>
-    <p>No account required. No ads. No algorithm. Everything you save lives on your device — Feather Studio never sees it.</p>
+    <p>No account required. No ads. No algorithm. Everything you save lives on your device.</p>
     <div class="private-pills">
       <span class="private-pill">No account required</span>
       <span class="private-pill">No ads</span>
@@ -490,7 +472,7 @@
       <span class="private-pill">Export anytime</span>
     </div>
     <a href="https://apps.apple.com/app/id6774278421" class="btn-light" target="_blank">
-      Download Spots. — Free
+      Download Spots.
     </a>
   </section>
 
